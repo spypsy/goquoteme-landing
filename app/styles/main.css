@@ -1,20 +1,18 @@
-@import "./colors.less";
 @import 'https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600';
 .commentBox,
 .commentList {
-    width: 50%;
-    margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }
-
-body, html {
+body,
+html {
   font-family: 'Rajdhani', sans-serif;
   font-weight: 500;
 }
-
 .row,
 .header {
-	text-align: center;
-  background-color: @contrast-color;
+  text-align: center;
+  background-color: #174a5e;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -22,22 +20,19 @@ body, html {
 }
 body {
   padding-top: 80px;
-  background: @main-color;
+  background: #E4FEE2;
   height: 200vh;
 }
-
 h1 {
   color: white;
 }
-
 h2 {
   padding-top: 40px;
-  color: @main-color;
+  color: #E4FEE2;
   width: 40%;
   margin: 0 auto;
   font-weight: lighter;
 }
-
 .content {
   margin-top: 60vh;
   background: white;
@@ -46,41 +41,37 @@ h2 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
-  .box-container {
-    display: flex;
-    align-items: center;
-    width: 75%;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -40%;
-    position: absolute;
-    justify-content: space-between;
-
-    .info-box {
-      background: @highlight-color;
-      width: 250px;
-      height: 400px;
-      p {
-        padding: 18px;
-      }
-      .circle {
-        width: 80px;
-        height: 80px;
-        border: 2px solid white;
-        margin: 0 auto;
-        border-radius: 50%;
-      }
-      h3 {
-        font-size: 2em;
-        text-align: center;
-        width: 100%;
-      }
-    }
-  }
-
 }
-
+.content .box-container {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40%;
+  position: absolute;
+  justify-content: space-between;
+}
+.content .box-container .info-box {
+  background: #17808F;
+  width: 250px;
+  height: 400px;
+}
+.content .box-container .info-box p {
+  padding: 18px;
+}
+.content .box-container .info-box .circle {
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.content .box-container .info-box h3 {
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
 .background {
   background: url('../images/icons.svg');
   width: 80vw;
@@ -89,26 +80,14 @@ h2 {
   z-index: -1;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   margin: auto;
   position: fixed;
 }
-
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 /* Larger than mobile */
-@media (min-width: 400px) {}
-
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
 /* Larger than tablet */
-@media (min-width: 750px) {}
-
 /* Larger than desktop */
-@media (min-width: 1000px) {}
-
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
