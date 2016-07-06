@@ -4,7 +4,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "gulp",
+    "start": "gulp"
   },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
