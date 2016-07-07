@@ -30,6 +30,8 @@ app.use(bodyParser.json());
 // app.use(session({ secret: 'keyboard cat' }));
 app.use(router.router);
 
+console.log('I AM RUNNING');
+
 var server = app.listen(app.get('port'), function () {
 
   var host = server.address().address;
