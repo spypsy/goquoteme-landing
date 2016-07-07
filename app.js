@@ -21,6 +21,7 @@ var options = {
 };
 
 app.use(compress());
+
 app.use(express.static(__dirname + '/app', options));
 //app.use(express.cookieParser());
 // parse application/x-www-form-urlencoded
