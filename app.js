@@ -1,6 +1,6 @@
 /*jshint node: true*/
 var express = require('express');
-var session = require('express-session');
+// var session = require('express-session');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 
@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/app', options));
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
-app.use(session({ secret: 'keyboard cat' }));
+// app.use(session({ secret: 'keyboard cat' }));
 app.use(router.router);
 
 var server = app.listen(app.get('port'), function () {
@@ -35,6 +35,6 @@ var server = app.listen(app.get('port'), function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Enki test app listening at http://%s:%s', host, port);
+  console.log('GoQuoteMe test app listening at http://%s:%s', host, port);
 
 });
