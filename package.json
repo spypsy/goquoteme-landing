@@ -4,32 +4,42 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "node app.js"
   },
+  "main": "index.html",
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
+    "browserify": "*",
     "connect": "^3.0.1",
     "connect-livereload": "*",
-    "gulp-livereload": "^2.0.0",
+    "express": "^4.14.0",
     "gulp": "^3.6.0",
-    "reactify": "~0.15.2",
-    "react": "^0.12.0",
-    "browserify": "*",
-    "watchify": "*",
-    "vinyl-source-stream": "*",
-    "gulp-less": "*",
-    "gulp-ruby-sass": "*",
-    "gulp-plumber": "^0.6.3",
     "gulp-autoprefixer": "^1.0.1",
     "gulp-cache": "^0.2.2",
     "gulp-jshint": "^1.5.3",
-    "jshint-stylish": "^1.0.0",
-    "gulp-uglify": "^1.0.1",
+    "gulp-less": "*",
+    "gulp-livereload": "^2.0.0",
     "gulp-minify-html": "^0.1.6",
+    "gulp-plumber": "^0.6.3",
+    "gulp-ruby-sass": "*",
     "gulp-size": "^1.1.0",
-    "serve-static": "^1.4.0",
-    "serve-index": "^1.1.4",
+    "gulp-uglify": "^1.0.1",
+    "jshint-stylish": "^1.0.0",
     "lazypipe": "^0.2.1",
-    "opn": "*"
+    "opn": "*",
+    "react": "^0.12.0",
+    "reactify": "~0.15.2",
+    "serve-index": "^1.1.4",
+    "serve-static": "^1.4.0",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "ejs": "^2.4.2",
+    "express-session": "^1.14.0",
+    "monk": "^3.0.3",
+    "superagent": "^2.0.0"
   }
 }
