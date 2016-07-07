@@ -10,7 +10,7 @@ var router = require(__dirname + '/app/controllers');
 app.engine('html', require('ejs').renderFile);
 app.set('views', __dirname + '/app');
 app.set('view engine', 'ejs');
-app.set('port', (process.env.PORT || 3001));
+app.set('port', (process.env.PORT || 3000));
 
 var options = {
   dotfiles: 'ignore',
