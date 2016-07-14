@@ -28,6 +28,10 @@ body {
 
 h1 {
   color: white;
+  font-weight: 100;
+}
+.go-bold {
+  font-weight: 500;
 }
 
 h2 {
@@ -49,18 +53,19 @@ h2 {
 
   .box-container {
     display: flex;
+    margin: 0 auto;
     align-items: center;
     width: 75%;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -40%;
-    position: absolute;
+    max-width: 1000px;
+    transform: translateY(-40%);
     justify-content: space-between;
 
     .info-box {
       background: @highlight-color;
       width: 250px;
       height: 400px;
+      padding-top: 32px;
+      border-radius: 10px;
       p {
         padding: 18px;
       }
@@ -85,7 +90,6 @@ h2 {
   background: url('../images/icons.svg');
   width: 80vw;
   height: 80vh;
-  position: absolute;
   z-index: -1;
   top: 0;
   left: 50%;
@@ -93,6 +97,8 @@ h2 {
   transform: translateX(-50%);
   margin: auto;
   position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Media Queries
