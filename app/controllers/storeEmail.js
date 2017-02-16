@@ -17,8 +17,9 @@ function registerEmail(req, res) {
       process.exit(1);
     }
     var Email = db.collection('emails');
+    console.log(req.query.email);
     Email.insert({
-      email: req.body.email,
+      email: req.query.email,
       createdAt: new Date()
     }, function(err, result) {
       // res.status(200).send();
@@ -30,5 +31,6 @@ function registerEmail(req, res) {
 }
 
 router.post('/register-email', registerEmail);
+router.get('/register-email', registerEmail);
 
 exports.router = router;

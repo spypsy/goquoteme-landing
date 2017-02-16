@@ -1,6 +1,6 @@
 /*jshint node: true*/
 var express = require('express');
-var session = require('express-session');
+// var session = require('express-session');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var cors = require('cors');
@@ -34,6 +34,7 @@ function storeEmail() {
     console.log('LOGGED');
     console.log(req.body);
     console.log(req.headers);
+    console.log(req.query);
     next();
   }
 
@@ -59,8 +60,8 @@ app.use(express.static(__dirname + '/app', options));
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
-app.use(session({ secret: 'keybaord cat' }));
-app.use(logger)
+// app.use(session({ secret: 'keybaord cat' }));
+app.use(logger);
 app.use(router.router);
 
 

@@ -1,6 +1,6 @@
 (function() {
-  url = 'http://www.goquoteme.com';
-  // var url = 'http://localhost:3001';
+  var url = 'http://www.goquoteme.com';
+  // url = 'http://localhost:3001';
 
   var form = document.getElementById("waiting-list");
   var email = document.getElementById('email-input');
@@ -12,7 +12,7 @@
   // console.log(form)
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-    xhr.open("POST", url + "/register-email", true);
+    xhr.open("GET", url + "/register-email" + "?email=" + encodeURIComponent(email.value), true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onload = function() {
       // if (window.ga) {
@@ -43,6 +43,6 @@
       }
     };
     console.log(email.value);
-    xhr.send("email=" + encodeURIComponent(email.value));
+    xhr.send();
   });
 })();
