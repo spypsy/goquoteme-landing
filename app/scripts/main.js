@@ -1,6 +1,6 @@
 (function() {
-  // var url = 'https://www.goquoteme.com';
-  var url = 'http://localhost:3001';
+  var url = 'https://www.goquoteme.com';
+  // var url = 'http://localhost:3001';
 
   console.log("foo");
   var form = document.getElementById("waiting-list");
