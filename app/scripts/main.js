@@ -1,5 +1,5 @@
 (function() {
-  var url = 'http://www.goquoteme.com';
+  var url = 'http://www.goquoteme.herokuapp.com';
   // url = 'http://localhost:3001';
 
   var form = document.getElementById("waiting-list");
