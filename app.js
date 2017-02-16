@@ -6,9 +6,9 @@ var compress = require('compression');
 var cors = require('cors');
 
 var app = express();
+app.use(cors());
 var router = require(__dirname + '/app/controllers');
 
-app.use(cors());
 
 
 function storeEmail() {
