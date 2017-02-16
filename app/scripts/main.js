@@ -1,8 +1,12 @@
 (function() {
-  var url = 'https://www.goquoteme.com';
-  // var url = 'http://localhost:3001';
+  var url = 'http://localhost:3001';
 
   console.log("foo");
+
+  if (process.env.ENV && process.env.ENV === 'production') {
+    url = 'https://www.goquoteme.com';
+  }
+
   var form = document.getElementById("waiting-list");
   var email = document.getElementById('email-input');
   var xhr = new XMLHttpRequest();

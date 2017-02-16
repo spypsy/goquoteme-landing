@@ -8,8 +8,8 @@ var cors = require('cors');
 var app = express();
 var router = require(__dirname + '/app/controllers');
 
-// Connection URL
 app.use(cors());
+
 
 function storeEmail() {
 
@@ -30,6 +30,12 @@ function storeEmail() {
   //   console.log("Inserted 3 documents into the collection");
   // });
 
+  function logger(req, res, next) {
+    console.log('LOGGED');
+    console.log(req.body);
+    console.log(req.headers);
+    next();
+  }
 
 
 app.engine('html', require('ejs').renderFile);
@@ -54,7 +60,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 app.use(session({ secret: 'keybaord cat' }));
+app.use(logger)
 app.use(router.router);
+
 
 var server = app.listen(app.get('port'), function () {
 
