@@ -1,6 +1,6 @@
 (function() {
   var url = 'http://www.goquoteme.com';
-  // url = 'http://localhost:3001';
+  url = 'http://localhost:3001';
 
   var form = document.getElementById("waiting-list");
   var email = document.getElementById('email-input');
@@ -44,6 +44,7 @@
     // xhr.open("GET", reqUrl, true);
     var xhr = createCORSRequest('GET', reqUrl);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("accept", "*/*");
     xhr.onload = function() {
 
 
