@@ -51,22 +51,38 @@ body, html {
   .splash-content {
     margin-top: 20vh;
     height: 100vh;
-    .button {
-      cursor: pointer;
-      width: 200px;
-      height: 80px;
-      background: @dark-contrast;
+    #waiting-list {
       position: absolute;
-      bottom: 200px;
+      bottom: 300px;
+      text-align: center;
       left: 50%;
       transform: translateX(-50%);
-      border-radius: 8px;
-      color: white;
-      text-align: center;
-      line-height: 80px;
-      font-size: 1.4em;
-      box-shadow: 4px 4px 20px fade(black, 40%);
-      user-select: none;
+      font-size: 1.1em;
+      h2 {
+        font-weight: 200;
+        color: white;
+        margin-bottom: 8px;
+      }
+      .label-field {
+        color: white;
+      }
+      input {
+        line-height: 1.8em;
+      }
+      .button {
+        // cursor: pointer;
+        // width: 200px;
+        line-height: 1.8em;
+        background: @dark-contrast;
+        border-radius: 2px;
+        // color: white;
+        // text-align: center;
+        // line-height: 80px;
+        // font-size: 1.4em;
+        box-shadow: 4px 4px 20px fade(black, 40%);
+        // user-select: none;
+        border: none;
+      }
     }
   }
   .intro {

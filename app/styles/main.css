@@ -46,25 +46,31 @@ html {
   margin-top: 20vh;
   height: 100vh;
 }
-.container .splash-content .button {
-  cursor: pointer;
-  width: 200px;
-  height: 80px;
-  background: #B71C1C;
+.container .splash-content #waiting-list {
   position: absolute;
-  bottom: 200px;
+  bottom: 300px;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 8px;
+  font-size: 1.1em;
+}
+.container .splash-content #waiting-list h2 {
+  font-weight: 200;
   color: white;
-  text-align: center;
-  line-height: 80px;
-  font-size: 1.4em;
+  margin-bottom: 8px;
+}
+.container .splash-content #waiting-list .label-field {
+  color: white;
+}
+.container .splash-content #waiting-list input {
+  line-height: 1.8em;
+}
+.container .splash-content #waiting-list .button {
+  line-height: 1.8em;
+  background: #B71C1C;
+  border-radius: 2px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  border: none;
 }
 .container .intro {
   color: white;
