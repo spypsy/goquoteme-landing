@@ -21,7 +21,7 @@ var options = {
 };
 
 app.use(compress());
-app.use(express.static(__dirname + '/app/public', options));
+app.use(express.static(__dirname + '/app/scripts', options));
 //app.use(express.cookieParser());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
