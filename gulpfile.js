@@ -23,25 +23,25 @@ gulp.task('browserify', function() {
 
   var bundler = browserify({
         entries: ['./app/scripts/main.js'], // Only need initial file, browserify finds the deps
-        transform: [reactify], // Convert JSX to normal javascript
+        // transform: [reactify], // Convert JSX to normal javascript
         debug: true, cache: {}, packageCache: {}, fullPaths: true
     });
 
     var watcher  = watchify(bundler);
 
     return watcher
-    .on('update', function () { // When any files updates
-        var updateStart = Date.now();
-        console.log('Updating!');
-        watcher.bundle()
-        .pipe(source('app.js'))
-        // This is where you add uglifying etc.
-        .pipe(gulp.dest('./app/scripts/'));
-        console.log('Updated!', (Date.now() - updateStart) + 'ms');
-    })
-    .bundle() // Create the initial bundle when starting the task
-    .pipe(source('app.js'))
-    .pipe(gulp.dest('./app/scripts/'));
+      .on('update', function () { // When any files updates
+          var updateStart = Date.now();
+          console.log('Updating!');
+          watcher.bundle()
+          .pipe(source('app.js'))
+          // This is where you add uglifying etc.
+          .pipe(gulp.dest('./app/scripts/'));
+          console.log('Updated!', (Date.now() - updateStart) + 'ms');
+      })
+      .bundle() // Create the initial bundle when starting the task
+      .pipe(source('app.js'))
+      .pipe(gulp.dest('./app/scripts/'));
 });
 
 
