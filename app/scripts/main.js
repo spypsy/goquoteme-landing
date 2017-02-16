@@ -1,5 +1,6 @@
 (function() {
-  var url = 'https://www.goquoteme.com';
+  // var url = 'https://www.goquoteme.com';
+  var url = 'http://localhost:3001';
 
   console.log("foo");
   var form = document.getElementById("waiting-list");
@@ -12,7 +13,7 @@
   // console.log(form)
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-    xhr.open("POST", url + "/api/register-email", true);
+    xhr.open("POST", url + "/register-email", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onload = function() {
       // if (window.ga) {

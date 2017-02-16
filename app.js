@@ -53,7 +53,7 @@ app.use(express.static(__dirname + '/app', options));
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
-app.use(session({ secret: 'spyro dragon' }));
+app.use(session({ secret: 'keybaord cat' }));
 app.use(router.router);
 
 var server = app.listen(app.get('port'), function () {

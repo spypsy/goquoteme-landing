@@ -6,7 +6,7 @@ var MongoClient = require('mongodb').MongoClient
 host = 'mongodb://localhost:27017/filmbeat'
 
 if (process.env.MONGODB_URI) {
-  url = process.env.MONGODB_URI;
+  // url = process.env.MONGODB_URI;
 }
 
 
@@ -29,6 +29,6 @@ function registerEmail(req, res) {
   });
 }
 
-router.post('/api/register-email', registerEmail);
+router.post('/register-email', registerEmail);
 
 exports.router = router;
