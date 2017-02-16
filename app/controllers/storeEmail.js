@@ -1,10 +1,17 @@
 var router = require('express').Router();
 var MongoClient = require('mongodb').MongoClient
 
-var url = 'mongodb://localhost:27017/filmbeat';
+
+
+host = 'mongodb://localhost:27017/filmbeat'
+
+if (process.env.MONGODB_URI) {
+  url = process.env.MONGODB_URI;
+}
+
 
 function registerEmail(req, res) {
-  MongoClient.connect(url, function(err, db) {
+  MongoClient.connect(host, function(err, db) {
     if (err) {
       console.log('error connecting to mongo');
       process.exit(1);
