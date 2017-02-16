@@ -1,20 +1,52 @@
 (function() {
   var url = 'http://www.goquoteme.com';
-  // url = 'http://localhost:3001';
+  url = 'http://localhost:3001';
 
   var form = document.getElementById("waiting-list");
   var email = document.getElementById('email-input');
-  var xhr = new XMLHttpRequest();
+  // var xhr = new XMLHttpRequest();
 
   function getRefParameter() {
     return '';
   }
+  function createCORSRequest(method, url) {
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr) {
+
+      // Check if the XMLHttpRequest object has a "withCredentials" property.
+      // "withCredentials" only exists on XMLHTTPRequest2 objects.
+      xhr.open(method, url, true);
+
+    } else if (typeof XDomainRequest != "undefined") {
+
+      // Otherwise, check if XDomainRequest.
+      // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+      xhr = new XDomainRequest();
+      xhr.open(method, url);
+
+    } else {
+
+      // Otherwise, CORS is not supported by the browser.
+      console.error('error with cors');
+      xhr = null;
+
+    }
+    return xhr;
+  }
+
   // console.log(form)
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-    xhr.open("GET", url + "/register-email" + "?email=" + encodeURIComponent(email.value), true);
+
+
+    var reqUrl = url + "/register-email" + "?email=" + encodeURIComponent(email.value)
+
+    // xhr.open("GET", reqUrl, true);
+    var xhr = createCORSRequest('GET', reqUrl);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onload = function() {
+
+
       // if (window.ga) {
       //   ga('send', 'event', 'waiting-list', 'receive', this.responseText);
       // }
